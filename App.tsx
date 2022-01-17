@@ -29,6 +29,7 @@ import {
 
 // import tw from 'twrnc';
 import tw from './lib/tailwind';
+import {useDeviceContext} from 'twrnc';
 
 const Section: React.FC<{
   title: string;
@@ -59,6 +60,7 @@ const Section: React.FC<{
 };
 
 const App = () => {
+  useDeviceContext(tw); // <- 👋
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -77,7 +79,7 @@ const App = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Edit <Text style={tw`text-warning-hover`}>App.tsx</Text> to change
+            Edit <Text style={tw`text-blue-hover`}>App.tsx</Text> to change
             this screen and then come back to see your edits.
           </Section>
           <Section title="See Your Changes">
